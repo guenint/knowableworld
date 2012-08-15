@@ -6,7 +6,7 @@ class User
 
 	property :id, Serial
 	property :name, String, :required => true
-	property :fb_id, Integer # one's Facebook ID, if applicable
+	property :fb_id, Integer, :required => true
 	property :admin, Boolean, :default => false
 	property :created_at, DateTime
 	property :updated_at, DateTime
