@@ -85,7 +85,7 @@ end
 get '/users/:id/posts' do
     @user = User.get(params[:id])
     if user && user.admin?
-        @posts = Post.all(:user => current_user)
+        @posts = Post.all(:user => user)
         @title = "#{current_user.name}'s Posts"
         erb :user_posts
     else

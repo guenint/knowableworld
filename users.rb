@@ -43,5 +43,3 @@ get '/users/:id/destroy' do
 	end
 	redirect '/'
 end
-		
-

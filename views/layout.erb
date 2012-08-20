@@ -1,0 +1,44 @@
+<!doctype html>  
+<html lang="en">  
+<head>  
+  <meta charset="utf8">  
+  <title><%= @title + ' | Knowable World' %></title>  
+  <link href="/reset.css" rel="stylesheet">  
+  <link href="/style.css" rel="stylesheet">  
+</head>  
+<body>  
+  <header> 
+    <div id="user_nav">
+      <% if current_user %>
+        Welcome, <%= current_user.name %>!
+        <a href="/sign_out">Sign Out</a>
+      <% else %>
+        <a href="/auth/facebook">Sign In via Facebook</a>
+      <% end %>
+     </div>
+     
+    <hgroup>  
+      <h1><a href="/">Knowable World</a></h1>  
+      <h2>Freedom in the world around us</h2>  
+    </hgroup>  
+  </header>  
+  
+  <br />
+  <div id="main"> 
+    <% if flash[:notice] %>  
+      <p class="notice"><%= flash[:notice] %></p>
+    <% end %>  
+  
+    <% if flash[:error] %>  
+      <p class="error"><%= flash[:error] %></p>
+    <% end %>
+   
+    <%= yield %>  
+  </div>  
+  
+  <footer>  
+    <p><small>Created, designed, and produced by <a href="http://maxscheiber.com">Max 
+      Scheiber</a>.</small></p>  
+  </footer>  
+</body>  
+</html> 
