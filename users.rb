@@ -39,7 +39,7 @@ get '/users/:id/destroy' do
 	@user = User.get(params[:id])
    if current_user && current_user.admin?
 		@user.destroy
-		flash[:notice] "User deleted."
+		flash[:notice] = "User deleted."
 	end
 	redirect '/'
 end

@@ -1,5 +1,5 @@
 # database setup
-DataMapper.setup(:default, 'mysql://root:43rscm2uD@localhost/vineyard')
+DataMapper.setup(:default, 'mysql://root:43rscm2uD@localhost/knowableworld')
 
 class User
 	include DataMapper::Resource
